@@ -14,15 +14,15 @@ namespace GestionNovedades.Model.Entidades
 
         [Key] 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
-        public Guid IdCompanias { get; set; }
+        public Guid IdCompania { set; get; }
 
         [Column("IdentificacionCompania", TypeName = "varchar")]
         [StringLength(10)]
-        public string CompaniaId { get; set; }
+        public string CompaniaId { set; get; }
 
         [Column("NombreCompania", TypeName = "varchar")]
         [StringLength(70)]
-        public string NombreCompania { get; set; }
+        public string NombreCompania { set; get; }
 
     }
 }

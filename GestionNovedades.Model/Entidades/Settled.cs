@@ -11,37 +11,60 @@ namespace GestionNovedades.Model.Entidades
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid IdRadicado { get; set; }
+        public Guid IdRadicado { set; get; }
 
         [Column("NumeroProceso",TypeName = "varchar")]
         [StringLength(10)]
-        public string NumeroProceso { get; set; }
+        public string NumeroProceso { set; get; }
 
-        /* como agrego la relacion con company*/
+        [Column ("IdCompania")]
+        public Guid IdCompaniaReporta { set; get; }
+        [ForeignKey("IdCompaniaReporta")]
+        public Company CompaniaReporta { set; get; }
         
-        /* como agrego Ciclo*/
+        [Column("IdRequisitos")]
+        public Guid IdRequisitos { set; get; }
+        [ForeignKey("IdRequisitos")]
+        public Employee Requisitos { set; get; }
 
-        [Column("FechaInicio",TypeName = "datetime" )]
-        public DateTime FechaInicio { get; set; }   
 
-        [Column("Fechallegada",TypeName = "datetime")]
-        public DateTime Fechallegada { get; set; }
+        [Column("IdDesarrollo")]
+        public Guid IdDesarrollo { set; get; }
+        [ForeignKey("IdDesarrollo")]
+        public Employee Desarrollo { set; get; }
+
+
+        [Column("IdCalidad")]
+        public Guid IdCalidad { set; get; }
+        [ForeignKey("IdCalidad")]
+        public Employee Calidad { set; get; }
+
+        [Column("IdEntrega")]
+        public Guid IdEntrega { set; get; }
+        [ForeignKey("IdEntrega")]
+        public Employee Entrega { set; get; }
+
+        [Column("FechaInicio",TypeName = "smalldatetime" )]
+        public DateTime FechaInicio { set; get; }   
+
+        [Column("Fechallegada",TypeName = "smalldatetime")]
+        public DateTime Fechallegada { set; get; }
 
         [Column("Estado", TypeName = "char")]
         [StringLength(1)]
-        public char Estado { get; set; }
+        public char Estado { set; get; }
 
         /* como agrego la responsable */
 
 
-        [Column("FechaUltimaRevision", TypeName = "datetime")]
-        public DateTime FechaUltimaRevision { get; set; }
+        [Column("FechaUltimaRevision", TypeName = "smalldatetime")]
+        public DateTime FechaUltimaRevision { set; get; }
 
-        [Column("FechaFinaliza", TypeName = "datetime")]
-        public DateTime FechaFechaFinaliza{ get; set; }
+        [Column("FechaFinaliza", TypeName = "smalldatetime")]
+        public DateTime FechaFechaFinaliza{ set; get; }
 
-        [Column("FechaEntrega", TypeName = "datetime")]
-        public DateTime FechaEntrega { get; set; }
+        [Column("FechaEntrega", TypeName = "smalldatetime")]
+        public DateTime FechaEntrega { set; get; }
 
         /* Falta campo persona entrega*/
 
@@ -49,7 +72,7 @@ namespace GestionNovedades.Model.Entidades
 
         [Column("Descripcion",TypeName = "varchar")]
         [StringLength(500)]
-        public string Descripcion { get; set; }
+        public string Descripcion { set; get; }
 
 
     }

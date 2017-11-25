@@ -12,17 +12,19 @@ namespace GestionNovedades.Model.Entidades
 
         [Key] 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
-        public Guid IdEmpleados { get; set; }
+        public Guid IdEmpleado { set; get; }
 
         [Column("Identificacion",TypeName = "varchar")]
         [StringLength(20)]
-        public string Identificacion { get; set; }
+        public string Identificacion { set; get; }
 
         [Column("NombreCompleto", TypeName = "varchar")]
         [StringLength(200)]
-        public string NombreCompleto { get; set; }
-
-        /* como le agregamos el rol*/
-
+        public string NombreCompleto { set; get; }
+        
+        [Column("IdRole")]
+        public Guid IdRolEmpelado { set; get; }
+        [ForeignKey("IdRolEmpelado")]
+        public Role Rol { set; get; }
     }
 }
