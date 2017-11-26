@@ -1,79 +1,112 @@
-﻿
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Settled.cs" company="OPA SAS">
+//   All Rights Reserved
+// </copyright>
+// <summary>
+//   Defines the Settled type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace GestionNovedades.Model.Entidades
 {
     using System;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+    /// <summary>
+    /// The settled.
+    /// </summary>
     [Table("Radicado")]
     public class Settled
     {
+        /// <summary>
+        /// Gets or sets the settled id.
+        /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid IdRadicado { set; get; }
+        [Column("IdRadicado")]
+        public Guid SettledId { get; set; }
 
-        [Column("NumeroProceso",TypeName = "varchar")]
+        /// <summary>
+        /// Gets or sets the settled number.
+        /// </summary>
+        [Column("NumeroProceso", TypeName = "varchar")]
         [StringLength(10)]
-        public string NumeroProceso { set; get; }
+        public string SettledNumber { get; set; }
 
-        [Column ("IdCompania")]
-        public Guid IdCompaniaReporta { set; get; }
+        /// <summary>
+        /// Gets or sets the company report id.
+        /// </summary>
+        [Column("IdCompaniaReporta")]
+        public Guid CompanyReportId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the company report.
+        /// </summary>
         [ForeignKey("IdCompaniaReporta")]
-        public Company CompaniaReporta { set; get; }
-        
-        [Column("IdRequisitos")]
-        public Guid IdRequisitos { set; get; }
-        [ForeignKey("IdRequisitos")]
-        public Employee Requisitos { set; get; }
+        public Company CompanyReport { get; set; }
 
+        /// <summary>
+        /// Gets or sets the settled start.
+        /// </summary>
+        [Column("FechaInicio", TypeName = "smalldatetime")]
+        public DateTime SettledStart { get; set; }
+
+        /// <summary>
+        /// Gets or sets the state.
+        /// </summary>
+        [Column("Estado")]
+        public byte State { get; set; }
+
+        /// <summary>
+        /// Gets or sets the settled last revision.
+        /// </summary>
+        [Column("FechaUltimaRevision", TypeName = "smalldatetime")]
+        public DateTime SettledLastRevision { get; set; }
+
+        /// <summary>
+        /// Gets or sets the setled end.
+        /// </summary>
+        [Column("FechaFinaliza", TypeName = "smalldatetime")]
+        public DateTime SettledEnd { get; set; }
+
+        /// <summary>
+        /// Gets or sets the settled deliver date.
+        /// </summary>
+        [Column("FechaEntrega", TypeName = "smalldatetime")]
+        public DateTime SettledDeliver { get; set; }
+
+        /// <summary>
+        /// Gets or sets the description.
+        /// </summary>
+        [Column("Descripcion", TypeName = "varchar")]
+        [StringLength(500)]
+        public string Description { get; set; }
+
+        /*
+        [Column("IdRequisitos")]
+        public Guid IdRequisitos { get; set; }
+
+        [ForeignKey("IdRequisitos")]
+        public Employee Requisitos { get; set; }
 
         [Column("IdDesarrollo")]
-        public Guid IdDesarrollo { set; get; }
-        [ForeignKey("IdDesarrollo")]
-        public Employee Desarrollo { set; get; }
+        public Guid IdDesarrollo { get; set; }
 
+        [ForeignKey("IdDesarrollo")]
+        public Employee Desarrollo { get; set; }
 
         [Column("IdCalidad")]
-        public Guid IdCalidad { set; get; }
+        public Guid IdCalidad { get; set; }
+
         [ForeignKey("IdCalidad")]
-        public Employee Calidad { set; get; }
+        public Employee Calidad { get; set; }
 
         [Column("IdEntrega")]
-        public Guid IdEntrega { set; get; }
+        public Guid IdEntrega { get; set; }
+
         [ForeignKey("IdEntrega")]
-        public Employee Entrega { set; get; }
-
-        [Column("FechaInicio",TypeName = "smalldatetime" )]
-        public DateTime FechaInicio { set; get; }   
-
-        [Column("Fechallegada",TypeName = "smalldatetime")]
-        public DateTime Fechallegada { set; get; }
-
-        [Column("Estado", TypeName = "char")]
-        [StringLength(1)]
-        public char Estado { set; get; }
-
-        /* como agrego la responsable */
-
-
-        [Column("FechaUltimaRevision", TypeName = "smalldatetime")]
-        public DateTime FechaUltimaRevision { set; get; }
-
-        [Column("FechaFinaliza", TypeName = "smalldatetime")]
-        public DateTime FechaFechaFinaliza{ set; get; }
-
-        [Column("FechaEntrega", TypeName = "smalldatetime")]
-        public DateTime FechaEntrega { set; get; }
-
-        /* Falta campo persona entrega*/
-
-        /* Falta campo persona garantia*/
-
-        [Column("Descripcion",TypeName = "varchar")]
-        [StringLength(500)]
-        public string Descripcion { set; get; }
-
-
+        public Employee Entrega { get; set; }
+        */
     }
 }

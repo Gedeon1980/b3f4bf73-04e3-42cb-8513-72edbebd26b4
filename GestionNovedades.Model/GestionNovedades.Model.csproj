@@ -50,7 +50,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Company.cs" />
     <Compile Include="Entidades\Employee.cs" />
-    <Compile Include="Entidades\GIOContext.cs" />
+    <Compile Include="Entidades\GioContext.cs" />
     <Compile Include="Entidades\Incidents.cs" />
     <Compile Include="Entidades\Role.cs" />
     <Compile Include="Entidades\Settled.cs" />
