@@ -1,42 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GestionNovedades.Model.Entidades.Company">
-    <Position X="0.5" Y="1.75" Width="1.5" />
+    <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
       <FileName>Entidades\Company.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GestionNovedades.Model.Entidades.Employee">
-    <Position X="2.25" Y="0.5" Width="1.5" />
+    <Position X="2.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAIAAAABAEAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>Entidades\Employee.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GestionNovedades.Model.Entidades.GioContext">
-    <Position X="4" Y="0.5" Width="1.5" />
+    <Position X="8" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAAAAA=</HashCode>
       <FileName>Entidades\GioContext.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GestionNovedades.Model.Entidades.Incidents">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="6.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAQAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entidades\Incidents.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GestionNovedades.Model.Entidades.Role">
-    <Position X="4.25" Y="3" Width="1.5" />
+    <Position X="2.25" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entidades\Role.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GestionNovedades.Model.Entidades.Settled">
-    <Position X="6.5" Y="0.5" Width="1.5" />
+    <Position X="5.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAABAgAAIAgAAAAAAAAACAQAAAAgAABAAAAAE=</HashCode>
       <FileName>Entidades\Settled.cs</FileName>
