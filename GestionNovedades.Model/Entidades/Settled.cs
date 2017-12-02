@@ -43,7 +43,7 @@ namespace GestionNovedades.Model.Entidades
         /// <summary>
         /// Gets or sets the company report.
         /// </summary>
-        [ForeignKey("IdCompaniaReporta")]
+        [ForeignKey("CompanyReportId")]
         public Company CompanyReport { get; set; }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace GestionNovedades.Model.Entidades
         public DateTime SettledLastRevision { get; set; }
 
         /// <summary>
-        /// Gets or sets the setled end.
+        /// Gets or sets the settled end.
         /// </summary>
         [Column("FechaFinaliza", TypeName = "smalldatetime")]
         public DateTime SettledEnd { get; set; }
@@ -82,31 +82,5 @@ namespace GestionNovedades.Model.Entidades
         [Column("Descripcion", TypeName = "varchar")]
         [StringLength(500)]
         public string Description { get; set; }
-
-        /*
-        [Column("IdRequisitos")]
-        public Guid IdRequisitos { get; set; }
-
-        [ForeignKey("IdRequisitos")]
-        public Employee Requisitos { get; set; }
-
-        [Column("IdDesarrollo")]
-        public Guid IdDesarrollo { get; set; }
-
-        [ForeignKey("IdDesarrollo")]
-        public Employee Desarrollo { get; set; }
-
-        [Column("IdCalidad")]
-        public Guid IdCalidad { get; set; }
-
-        [ForeignKey("IdCalidad")]
-        public Employee Calidad { get; set; }
-
-        [Column("IdEntrega")]
-        public Guid IdEntrega { get; set; }
-
-        [ForeignKey("IdEntrega")]
-        public Employee Entrega { get; set; }
-        */
     }
 }

@@ -50,7 +50,7 @@ namespace GestionNovedades.Model.Entidades
         /// <summary>
         /// Gets or sets the role.
         /// </summary>
-        [ForeignKey("IdRolEmpelado")]
+        [ForeignKey("EmployeeRoleId")]
         public Role Role { get; set; }
     }
 }

@@ -11,6 +11,8 @@ namespace GestionNovedades.Model.Entidades
 {
     using System.Data.Entity;
 
+    using GestionNovedades.Model.Migrations;
+
     /// <summary>
     /// The gio context.
     /// </summary>
@@ -22,6 +24,7 @@ namespace GestionNovedades.Model.Entidades
         public GioContext()
             : base("GioContext")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<GioContext, Configuration>("GioContext"));
         }
 
         /// <summary>
@@ -33,5 +36,31 @@ namespace GestionNovedades.Model.Entidades
         /// Gets or sets the problems.
         /// </summary>
         public DbSet<Settled> Problems { get; set; }
+
+        /// <summary>
+        /// Gets or sets the team.
+        /// </summary>
+        public DbSet<Team> Teams { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Roles.
+        /// </summary>
+        public DbSet<Role> Roles { get; set; }
+
+        /// <summary>
+        /// Gets or sets the employees.
+        /// </summary>
+        public DbSet<Employee> Employees { get; set; }
+
+        /// <summary>
+        /// The on model creating.
+        /// </summary>
+        /// <param name="modelBuilder">
+        /// The model builder.
+        /// </param>
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
