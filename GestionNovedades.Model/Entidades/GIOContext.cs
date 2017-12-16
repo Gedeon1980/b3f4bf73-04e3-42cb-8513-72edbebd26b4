@@ -43,6 +43,11 @@ namespace GestionNovedades.Model.Entidades
         public DbSet<Team> Teams { get; set; }
 
         /// <summary>
+        /// Gets or sets the incidents.
+        /// </summary>
+        public DbSet<Incidents> Incidents { get; set; }
+
+        /// <summary>
         /// Gets or sets the Roles.
         /// </summary>
         public DbSet<Role> Roles { get; set; }

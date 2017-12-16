@@ -66,6 +66,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceAccess\DAO\CompanyDAO.cs" />
+    <Compile Include="ResourceAccess\DAO\EmployeeDAO.cs" />
+    <Compile Include="ResourceAccess\DAO\IncidentsDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

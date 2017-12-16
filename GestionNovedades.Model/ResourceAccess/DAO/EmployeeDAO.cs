@@ -1,12 +1,11 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CompanyDAO.cs" company="OPA SAS">
+// <copyright file="EmployeeDAO.cs" company="OPA SAS">
 //   All Rights Reserved
 // </copyright>
 // <summary>
-//   Defines the CompanyDAO type.
+//   Defines the EmployeeDAO type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
-
 namespace GestionNovedades.Model.ResourceAccess.DAO
 {
     using System;
@@ -15,92 +14,93 @@ namespace GestionNovedades.Model.ResourceAccess.DAO
     using GestionNovedades.Model.Entidades;
 
     /// <summary>
-    /// The company dao.
+    /// The employee dao.
     /// </summary>
-    public class CompanyDao
+    public class EmployeeDao
     {
         /// <summary>
         /// The insert.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="employee">
+        /// The employee.
         /// </param>
         /// <returns>
         /// The <see cref="Guid"/>.
         /// </returns>
-        internal Guid Insert(Company company)
+        internal Guid Insert(Employee employee)
         {
             using (GioContext context = new GioContext())
             {
-                context.Companies.Add(company);
+                context.Employees.Add(employee);
                 context.SaveChanges();
-                return company.CompanyId;
+                return employee.EmployeeId;
             }
         }
 
         /// <summary>
         /// The update.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="employee">
+        /// The employee.
         /// </param>
-        internal void Update(Company company)
+        internal void Update(Employee employee)
         {
             using (GioContext context = new GioContext())
             {
-                var companiaBd = context.Companies.FirstOrDefault(p => p.CompanyId == company.CompanyId);
-                if (companiaBd != null)
+                var employeeBd = context.Employees.FirstOrDefault(p => p.EmployeeId == employee.EmployeeId);
+                if (employeeBd != null)
                 {
-                    companiaBd.CompanyIdentification = company.CompanyIdentification;
-                    companiaBd.CompanyName = company.CompanyName;           
+                    employeeBd.EmployeeIdentification = employee.EmployeeIdentification;
+                    employeeBd.EmployeeName = employee.EmployeeName;
+                    employeeBd.EmployeeRoleId = employeeBd.EmployeeRoleId;
                     context.SaveChanges();
                 }
-            }                            
+            }
         }
 
         /// <summary>
         /// The delete.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="employee">
+        /// The employee.
         /// </param>
-        internal void Delete(Company company)
+        internal void Delete(Employee employee)
         {
             using (GioContext context = new GioContext())
             {
-                context.Companies.Remove(company);
+                context.Employees.Remove(employee);
                 context.SaveChanges();
             }
         }
 
         /// <summary>
-        /// The get company.
+        /// The get employees.
         /// </summary>
         /// <returns>
         /// The <see cref="List"/>.
         /// </returns>
-        internal List<Company> GetCompany()
+        internal List<Employee> GetEmployees()
         {
             using (GioContext context = new GioContext())
             {
-                return context.Companies.ToList();
+                return context.Employees.ToList();
             }
         }
 
         /// <summary>
-        /// The get company.
+        /// The get employee.
         /// </summary>
-        /// <param name="companyId">
-        /// The company id.
+        /// <param name="employedId">
+        /// The employed id.
         /// </param>
         /// <returns>
-        /// The <see cref="Company"/>.
+        /// The <see cref="Employee"/>.
         /// </returns>
-        internal Company GetCompany(Guid companyId)
+        internal Employee GetEmployee(Guid employedId)
         {
             using (GioContext context = new GioContext())
             {
-                return context.Companies.FirstOrDefault(p => p.CompanyId == companyId);
+                return context.Employees.FirstOrDefault(p => p.EmployeeId == employedId);
             }
         }
     }

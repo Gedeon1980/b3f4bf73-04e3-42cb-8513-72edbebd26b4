@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CompanyDAO.cs" company="OPA SAS">
+// <copyright file="IncidentsDAO.cs" company="OPA SAS">
 //   All Rights Reserved
 // </copyright>
 // <summary>
-//   Defines the CompanyDAO type.
+//   Defines the IncidentsDAO type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -15,92 +15,95 @@ namespace GestionNovedades.Model.ResourceAccess.DAO
     using GestionNovedades.Model.Entidades;
 
     /// <summary>
-    /// The company dao.
+    /// The incidents dao.
     /// </summary>
-    public class CompanyDao
+    public class IncidentsDao
     {
         /// <summary>
         /// The insert.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="incident">
+        /// The incident.
         /// </param>
         /// <returns>
         /// The <see cref="Guid"/>.
         /// </returns>
-        internal Guid Insert(Company company)
+        internal Guid Insert(Incidents incident)
         {
             using (GioContext context = new GioContext())
             {
-                context.Companies.Add(company);
+                context.Incidents.Add(incident);
                 context.SaveChanges();
-                return company.CompanyId;
+                return incident.IncidentId;
             }
         }
 
         /// <summary>
         /// The update.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="incident">
+        /// The incident.
         /// </param>
-        internal void Update(Company company)
+        internal void Update(Incidents incident)
         {
             using (GioContext context = new GioContext())
             {
-                var companiaBd = context.Companies.FirstOrDefault(p => p.CompanyId == company.CompanyId);
-                if (companiaBd != null)
+                var incidentBd = context.Incidents.FirstOrDefault(p => p.IncidentId == incident.IncidentId);
                 {
-                    companiaBd.CompanyIdentification = company.CompanyIdentification;
-                    companiaBd.CompanyName = company.CompanyName;           
-                    context.SaveChanges();
+                    if (incidentBd != null)
+                    {
+                        incidentBd.IncidentMoved = incident.IncidentMoved;
+                        incidentBd.IncidentSolved = incident.IncidentSolved;
+                        incidentBd.IncidentStart = incident.IncidentStart;
+                        context.SaveChanges();
+                    }
                 }
-            }                            
+            }
         }
 
         /// <summary>
         /// The delete.
         /// </summary>
-        /// <param name="company">
-        /// The company.
+        /// <param name="incident">
+        /// The incident.
         /// </param>
-        internal void Delete(Company company)
+        internal void Delete(Incidents incident)
         {
             using (GioContext context = new GioContext())
             {
-                context.Companies.Remove(company);
+                context.Incidents.Remove(incident);
                 context.SaveChanges();
             }
         }
 
         /// <summary>
-        /// The get company.
+        /// The get incidents.
         /// </summary>
         /// <returns>
         /// The <see cref="List"/>.
         /// </returns>
-        internal List<Company> GetCompany()
+        internal List<Incidents> GetIncidents()
         {
             using (GioContext context = new GioContext())
             {
-                return context.Companies.ToList();
+                return context.Incidents.ToList();
             }
         }
 
         /// <summary>
-        /// The get company.
+        /// The get incidents.
         /// </summary>
-        /// <param name="companyId">
-        /// The company id.
+        /// <param name="incidentId">
+        /// The incident id.
         /// </param>
         /// <returns>
-        /// The <see cref="Company"/>.
+        /// The <see cref="Incidents"/>.
         /// </returns>
-        internal Company GetCompany(Guid companyId)
+        internal Incidents GetIncidents(Guid incidentId)
         {
             using (GioContext context = new GioContext())
             {
-                return context.Companies.FirstOrDefault(p => p.CompanyId == companyId);
+                return context.Incidents.FirstOrDefault(p => p.IncidentId == incidentId);
             }
         }
     }
