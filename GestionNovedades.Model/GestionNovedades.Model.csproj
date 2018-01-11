@@ -52,9 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLogic\BL\GenericEntityBL.cs" />
+    <Compile Include="BusinessLogic\BL\Validators\CompanyValidator.cs" />
+    <Compile Include="BusinessLogic\BL\Validators\EmployeeValidator.cs" />
     <Compile Include="BusinessLogic\BL\Validators\EntityValidator.cs" />
     <Compile Include="BusinessLogic\BL\Validators\EntityValidatorFactory.cs" />
+    <Compile Include="BusinessLogic\BL\Validators\IncidentsValidator.cs" />
     <Compile Include="BusinessLogic\BL\Validators\RoleValidator.cs" />
+    <Compile Include="BusinessLogic\BL\Validators\SettledValidator.cs" />
+    <Compile Include="BusinessLogic\BL\Validators\TeamValidator.cs" />
     <Compile Include="Entidades\Company.cs" />
     <Compile Include="Entidades\Employee.cs" />
     <Compile Include="Entidades\GioContext.cs" />
