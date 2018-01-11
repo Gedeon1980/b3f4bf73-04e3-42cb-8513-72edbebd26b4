@@ -11,7 +11,8 @@ namespace GestionNovedades.Model.BusinessLogic.BL
     {
         public void Insert (T entity)
         {
-            var validationResult = EntityValidatorFactory.GetValidator(entity).Validate(entity);
+            var validationResult = EntityValidatorFactory.GetValidator(entity).Validate(entity);            
+            
             // Valido
             //Grabo en BD (Ver pagina)
             //Creo response y retorno
