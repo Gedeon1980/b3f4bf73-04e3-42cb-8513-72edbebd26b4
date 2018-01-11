@@ -8,6 +8,9 @@ namespace GestionNovedades.Model.Util
 {
     public class Response<T>
     {
+        public T OpertionResul { get; set; }
+        public List<string> Error { get; set; }
+        public bool IsValid { get; set; }
 
     }
 }
