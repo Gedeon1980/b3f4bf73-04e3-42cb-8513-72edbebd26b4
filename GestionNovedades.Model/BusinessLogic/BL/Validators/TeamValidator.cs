@@ -1,19 +1,30 @@
-﻿using FluentValidation;
-using GestionNovedades.Model.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="TeamValidator.cs" company="OPA SAS">
+//   All Rights Reserved
+// </copyright>
+// <summary>
+//   Defines the TeamValidator type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace GestionNovedades.Model.BusinessLogic.BL.Validators
 {
-    internal class TeamValidator:EntityValidator<Team>
+    using FluentValidation;
+
+    using GestionNovedades.Model.Entidades;
+
+    /// <summary>
+    /// The team validator.
+    /// </summary>
+    internal class TeamValidator : EntityValidator<Team>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamValidator"/> class.
+        /// </summary>
         public TeamValidator()
         {
-            RuleFor(r => r.SettledId).NotEmpty().WithMessage("");
-            RuleFor(r => r.EmployeeId).NotEmpty().WithMessage("");
+            this.RuleFor(r => r.SettledId).NotEmpty().WithMessage(string.Empty);
+            this.RuleFor(r => r.EmployeeId).NotEmpty().WithMessage(string.Empty);
         }
     }
 }

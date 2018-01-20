@@ -1,14 +1,31 @@
-﻿using FluentValidation;
-using GestionNovedades.Model.Entidades;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CompanyValidator.cs" company="OPA SAS">
+//   All Rights Reserved
+// </copyright>
+// <summary>
+//   Defines the CompanyValidator type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
 
 namespace GestionNovedades.Model.BusinessLogic.BL.Validators
 {
-    internal class CompanyValidator:EntityValidator<Company> 
+    using FluentValidation;
+
+    using GestionNovedades.Model.Configuration;
+    using GestionNovedades.Model.Entidades;
+
+    /// <summary>
+    /// The company validator.
+    /// </summary>
+    internal class CompanyValidator : EntityValidator<Company>
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompanyValidator"/> class.
+        /// </summary>
         public CompanyValidator()
         {
-            RuleFor(r => r.CompanyName).NotEmpty().WithMessage("El nombre de la compañia no puede estar vacia");
-            RuleFor(r => r.CompanyIdentification).NotEmpty().WithMessage("La identificacion de la compañia no puede estar vacio");
+            this.RuleFor(r => r.CompanyName).NotEmpty().WithMessage(GestionNovedadesConfig.Instance.GetLocaleString("EmptyCompanyName"));
+            this.RuleFor(r => r.CompanyIdentification).NotEmpty().WithMessage(GestionNovedadesConfig.Instance.GetLocaleString("EmptyCompanyId"));
         }
     }
 }

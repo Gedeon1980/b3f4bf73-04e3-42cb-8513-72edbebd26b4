@@ -61,6 +61,24 @@ namespace GestionNovedades.Model.Util.Languages {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to La identificacion de la compañia no puede estar vacio.
+        /// </summary>
+        internal static string EmptyCompanyId {
+            get {
+                return ResourceManager.GetString("EmptyCompanyId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de la compañia no puede estar vacia.
+        /// </summary>
+        internal static string EmptyCompanyName {
+            get {
+                return ResourceManager.GetString("EmptyCompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to La description del rol no puede ser vacio.
         /// </summary>
         internal static string EmptyRoleDescription {

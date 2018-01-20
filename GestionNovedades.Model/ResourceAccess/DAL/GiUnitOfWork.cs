@@ -20,7 +20,7 @@ namespace GestionNovedades.Model.ResourceAccess.DAL
         /// <summary>
         /// The context.
         /// </summary>
-        private GioContext context = new GioContext();
+        private readonly GioContext context = new GioContext();
 
         /// <summary>
         /// The disposed.
@@ -60,32 +60,57 @@ namespace GestionNovedades.Model.ResourceAccess.DAL
         /// <summary>
         /// Gets the company repository.
         /// </summary>
-        public GenericRepository<Company> CompanyRepository => this.companyRepository ?? new GenericRepository<Company>(this.context);
+        public GenericRepository<Company> CompanyRepository => this.companyRepository
+                                                    ?? (this.companyRepository = new GenericRepository<Company>(this.context));
 
         /// <summary>
         /// Gets the employee repository.
         /// </summary>
-        public GenericRepository<Employee> EmployeeRepository => this.employeeRepository ?? new GenericRepository<Employee>(this.context);
+        public GenericRepository<Employee> EmployeeRepository => this.employeeRepository
+                                                                 ?? (this.employeeRepository = new GenericRepository<Employee>(this.context));
 
         /// <summary>
         /// Gets the incident repository.
         /// </summary>
-        public GenericRepository<Incidents> IncidentRepository => this.incidentRepository ?? new GenericRepository<Incidents>(this.context);
+        public GenericRepository<Incidents> IncidentRepository => this.incidentRepository
+                                                                ?? (this.incidentRepository = new GenericRepository<Incidents>(this.context));
 
         /// <summary>
         /// Gets the role repository.
         /// </summary>
-        public GenericRepository<Role> RoleRepository => this.roleRepository ?? new GenericRepository<Role>(this.context);
+        public GenericRepository<Role> RoleRepository => this.roleRepository
+            ?? (this.roleRepository = new GenericRepository<Role>(this.context));
 
         /// <summary>
         /// Gets the settled repository.
         /// </summary>
-        public GenericRepository<Settled> SettledRepository => this.settledRepository ?? new GenericRepository<Settled>(this.context);
+        public GenericRepository<Settled> SettledRepository => this.settledRepository
+            ?? (this.settledRepository = new GenericRepository<Settled>(this.context));
 
         /// <summary>
         /// Gets the team repository.
         /// </summary>
-        public GenericRepository<Team> TeamRepository => this.teamRepository ?? new GenericRepository<Team>(this.context);
+        public GenericRepository<Team> TeamRepository => this.teamRepository
+            ?? (this.teamRepository = new GenericRepository<Team>(this.context));
+
+        /// <summary>
+        /// The get repository.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The entity type
+        /// </typeparam>
+        /// <returns>
+        /// The <see cref="GenericRepository{T}"/>.
+        /// </returns>
+        public GenericRepository<T> GetRepository<T>() where T : class
+        {
+            if (typeof(T) == typeof(Role))
+            {
+                return this.RoleRepository as GenericRepository<T>;
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// The save.
@@ -112,12 +137,9 @@ namespace GestionNovedades.Model.ResourceAccess.DAL
         /// </param>
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this.disposed && disposing)
             {
-                if (disposing)
-                {
-                    this.context.Dispose();
-                }
+                this.context.Dispose();
             }
 
             this.disposed = true;

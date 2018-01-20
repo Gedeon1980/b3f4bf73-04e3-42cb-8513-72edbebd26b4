@@ -11,6 +11,7 @@ namespace GestionNovedades.Model.BusinessLogic.BL.Validators
 {
     using FluentValidation;
 
+    using GestionNovedades.Model.Configuration;
     using GestionNovedades.Model.Entidades;
 
     /// <summary>
@@ -22,8 +23,8 @@ namespace GestionNovedades.Model.BusinessLogic.BL.Validators
         /// Initializes a new instance of the <see cref="RoleValidator"/> class.
         /// </summary>
         public RoleValidator()
-        {
-            this.RuleFor(r => r.RoleDescription).NotEmpty().WithMessage("La description del rol no puede ser vacio");
+        {                       
+            this.RuleFor(r => r.RoleDescription).NotEmpty().WithMessage(GestionNovedadesConfig.Instance.GetLocaleString("EmptyRoleDescription"));
         }
     }
 }

@@ -25,7 +25,7 @@ namespace GestionNovedades.Model.BusinessLogic.BL.Validators
         /// <typeparam name="T"> entity type to validate
         /// </typeparam>
         /// <returns>
-        /// The <see cref="EntityValidator"/>.
+        /// The <see cref="EntityValidator{T}"/>.
         /// </returns>
         public static EntityValidator<T> GetValidator<T>(T entity)
         {
