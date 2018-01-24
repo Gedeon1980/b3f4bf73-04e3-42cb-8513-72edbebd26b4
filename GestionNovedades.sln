@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2009
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionNovedades.Model", "GestionNovedades.Model\GestionNovedades.Model.csproj", "{0A3949BB-9440-405F-8AEA-18F17EA27A4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionNovedades.Test", "GestionNovedades.Test\GestionNovedades.Test.csproj", "{3A6D3467-CC9C-4BF4-B2CC-61D89E2A9CE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionNovedades.POC", "GestionNovedades.POC\GestionNovedades.POC.csproj", "{F9D0F40B-D12A-42F6-A381-7452CE659A29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{3A6D3467-CC9C-4BF4-B2CC-61D89E2A9CE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A6D3467-CC9C-4BF4-B2CC-61D89E2A9CE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A6D3467-CC9C-4BF4-B2CC-61D89E2A9CE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9D0F40B-D12A-42F6-A381-7452CE659A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9D0F40B-D12A-42F6-A381-7452CE659A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9D0F40B-D12A-42F6-A381-7452CE659A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9D0F40B-D12A-42F6-A381-7452CE659A29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

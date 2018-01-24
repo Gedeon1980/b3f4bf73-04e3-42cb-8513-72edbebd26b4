@@ -82,10 +82,10 @@
     <Compile Include="ResourceAccess\DAL\GiUnitOfWork.cs" />
     <Compile Include="ResourceAccess\DAL\GenericRepository.cs" />
     <Compile Include="Services\Facades\EntityManagerFacade.cs" />
-    <Compile Include="Util\Languages\es-CO1.Designer.cs">
+    <Compile Include="Util\Languages\Lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>es-CO.resx</DependentUpon>
+      <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\Response.cs" />
   </ItemGroup>
@@ -102,9 +102,13 @@
     <EmbeddedResource Include="Migrations\201712021641108_AddTeam.resx">
       <DependentUpon>201712021641108_AddTeam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Util\Languages\es-CO.resx">
+    <EmbeddedResource Include="Util\Languages\Lang.es-CO.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>es-CO1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Lang.es-CO1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\Languages\Lang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

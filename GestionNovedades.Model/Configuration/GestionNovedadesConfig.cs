@@ -14,6 +14,8 @@ namespace GestionNovedades.Model.Configuration
     using System.Resources;
     using System.Threading;
 
+    using GestionNovedades.Model.Util.Languages;
+
     /// <summary>
     /// The gestion novedades config.
     /// </summary>
@@ -25,17 +27,12 @@ namespace GestionNovedades.Model.Configuration
         private static GestionNovedadesConfig instance;
 
         /// <summary>
-        /// The resource manager.
-        /// </summary>
-        private readonly ResourceManager resourceManager;
-
-        /// <summary>
         /// Prevents a default instance of the <see cref="GestionNovedadesConfig"/> class from being created.
         /// </summary>
         private GestionNovedadesConfig()
         {
-            this.resourceManager = new ResourceManager("GestionNovedades.Model.Util.Languages", typeof(GestionNovedadesConfig).Assembly);
             Thread.CurrentThread.CurrentCulture = new CultureInfo(ConfigurationManager.AppSettings["DefaultCultrure"]);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(ConfigurationManager.AppSettings["DefaultCultrure"]);
         }
 
         /// <summary>
@@ -44,17 +41,17 @@ namespace GestionNovedades.Model.Configuration
         public static GestionNovedadesConfig Instance => instance ?? (instance = new GestionNovedadesConfig());
 
         /// <summary>
-        /// The get locale string.
+        /// The get string.
         /// </summary>
-        /// <param name="keyString">
-        /// The key string.
+        /// <param name="key">
+        /// The key.
         /// </param>
         /// <returns>
         /// The <see cref="string"/>.
         /// </returns>
-        public string GetLocaleString(string keyString) 
+        public string GetLocaleString(string key)
         {
-            return this.resourceManager.GetString(keyString);
+            return Lang.ResourceManager.GetString(key);
         }
     }
 }

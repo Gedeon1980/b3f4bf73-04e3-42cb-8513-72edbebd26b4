@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestionNovedades.Model.Util.Languages {
+namespace GestionNovedades.POC.Languages {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace GestionNovedades.Model.Util.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class es_CO {
+    internal class Lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal es_CO() {
+        internal Lang() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace GestionNovedades.Model.Util.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestionNovedades.Model.Util.Languages.es-CO", typeof(es_CO).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GestionNovedades.POC.Languages.Lang", typeof(Lang).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,29 +61,11 @@ namespace GestionNovedades.Model.Util.Languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to La identificacion de la compañia no puede estar vacio.
+        ///   Looks up a localized string similar to English language text.
         /// </summary>
-        internal static string EmptyCompanyId {
+        internal static string LanguageTest {
             get {
-                return ResourceManager.GetString("EmptyCompanyId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to El nombre de la compañia no puede estar vacia.
-        /// </summary>
-        internal static string EmptyCompanyName {
-            get {
-                return ResourceManager.GetString("EmptyCompanyName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to La description del rol no puede ser vacio.
-        /// </summary>
-        internal static string EmptyRoleDescription {
-            get {
-                return ResourceManager.GetString("EmptyRoleDescription", resourceCulture);
+                return ResourceManager.GetString("LanguageTest", resourceCulture);
             }
         }
     }
