@@ -44,6 +44,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +83,7 @@
     <Compile Include="ResourceAccess\DAL\GiUnitOfWork.cs" />
     <Compile Include="ResourceAccess\DAL\GenericRepository.cs" />
     <Compile Include="Services\Facades\EntityManagerFacade.cs" />
+    <Compile Include="Services\Facades\IEntityManagerFacade.cs" />
     <Compile Include="Util\Languages\Lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

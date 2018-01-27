@@ -1,25 +1,25 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="EntityManagerFacade.cs" company="OPA SAS">
+// <copyright file="IEntityManagerFacade.cs" company="OPA SAS">
 //   All Rights Reserved
 // </copyright>
 // <summary>
-//   The entity manager facade.
+//   Defines the IEntityManagerFacade type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace GestionNovedades.Model.Services.Facades
 {
-    using GestionNovedades.Model.BusinessLogic.BL;
+    using System.ServiceModel;
+
     using GestionNovedades.Model.Entidades;
     using GestionNovedades.Model.Util;
 
     /// <summary>
-    /// The entity manager facade.
+    /// The EntityManagerFacade interface.
     /// </summary>
-    public class EntityManagerFacade : IEntityManagerFacade
+    [ServiceContract]
+    public interface IEntityManagerFacade
     {
-        #region roles
-
         /// <summary>
         /// The insert role.
         /// </summary>
@@ -27,13 +27,9 @@ namespace GestionNovedades.Model.Services.Facades
         /// The role.
         /// </param>
         /// <returns>
-        /// The <see cref="Response{T}"/>.
+        /// The <see cref="Response"/>.
         /// </returns>
-        public Response<Role> InsertRole(Role role)
-        {
-            return new GenericEntityBl<Role>().Insert(role);
-        }
-        ////TODO: AGREGAR TODAS LAS ENTIDADES A LA FA
-        #endregion 
+        [OperationContract]
+        Response<Role> InsertRole(Role role);
     }
 }

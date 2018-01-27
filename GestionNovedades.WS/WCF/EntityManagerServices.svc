@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="GestionNovedades.Model.Services.Facades.EntityManagerFacade" CodeBehind="GestionNovedades.Model.Services.Facades.IEntityManagerFacade" %>

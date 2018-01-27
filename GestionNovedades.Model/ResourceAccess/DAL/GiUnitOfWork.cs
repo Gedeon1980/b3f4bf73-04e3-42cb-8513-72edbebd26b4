@@ -109,6 +109,18 @@ namespace GestionNovedades.Model.ResourceAccess.DAL
                 return this.RoleRepository as GenericRepository<T>;
             }
 
+            if (typeof(T) == typeof(Settled))
+            {
+                return this.SettledRepository as GenericRepository<T>;
+            }
+
+            if (typeof(T) == typeof(Team))
+            {
+                return this.TeamRepository as GenericRepository<T>;
+            }
+
+            ////TODO: COMPLETAR REPOSITORIOS FALTANTES
+
             return null;
         }
 
