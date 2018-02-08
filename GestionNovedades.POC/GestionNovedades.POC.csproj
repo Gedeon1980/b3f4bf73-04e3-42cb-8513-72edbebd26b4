@@ -34,6 +34,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,6 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\GestionNovedadesClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Languages\Lang.es-CO.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,6 +64,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerFacade.wsdl" />
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GestionNovedadesClient\EntityManagerServices4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GestionNovedadesClient\GestionNovedades.POC.GestionNovedadesClient.ResponseOfRoleohJWP38Q.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Languages\Lang.es-CO.resx">
@@ -67,6 +93,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GestionNovedadesClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GestionNovedadesClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GestionNovedadesClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GestionNovedadesClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

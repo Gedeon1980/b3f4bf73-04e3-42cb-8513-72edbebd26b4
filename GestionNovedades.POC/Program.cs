@@ -15,6 +15,7 @@ namespace GestionNovedades.POC
     using System.Resources;
     using System.Threading;
 
+    using GestionNovedades.POC.GestionNovedadesClient;
     using GestionNovedades.POC.Languages;
 
     /// <summary>
@@ -35,6 +36,17 @@ namespace GestionNovedades.POC
             Thread.CurrentThread.CurrentUICulture = culture;
             Thread.CurrentThread.CurrentCulture = culture;
             Console.WriteLine($@"Cambio de lenguaje {Lang.LanguageTest}");
+
+
+            //// Test Soap 
+            var client = new EntityManagerFacadeClient();
+            var role = new Role()
+            {
+                RoleDescription = String.Empty,
+                RoleId = Guid.NewGuid()
+            };
+            var response = client.InsertRole(role);
+
             Console.ReadKey();
         }
     }

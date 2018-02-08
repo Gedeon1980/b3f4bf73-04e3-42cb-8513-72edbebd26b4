@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5b1450ca-3676-48fa-8728-a7cd1d645f9e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EntityManagerServices.xsd" MetadataType="Schema" ID="ff280004-89dc-4331-a2b9-2cfa37ecfce2" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="EntityManagerServices1.xsd" MetadataType="Schema" ID="d6867c11-b0b9-43d9-a748-5665145f0d12" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="EntityManagerServices2.xsd" MetadataType="Schema" ID="08e9ee54-8cd7-468b-ae2a-fa497bc39577" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="EntityManagerServices3.xsd" MetadataType="Schema" ID="b0979ba8-ad89-4f77-91d8-5c7879602cdd" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="EntityManagerFacade.wsdl" MetadataType="Wsdl" ID="3c7f2b1f-c818-49ab-9029-319197e1e30a" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?wsdl" />
+    <MetadataFile FileName="EntityManagerServices4.xsd" MetadataType="Schema" ID="bc7877cc-f673-43ba-a405-d16326a7433d" SourceId="1" SourceUrl="http://localhost:82/Soap/Wcf/EntityManagerServices.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
